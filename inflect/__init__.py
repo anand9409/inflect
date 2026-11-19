@@ -3963,8 +3963,6 @@ class engine:
         self._number_args = {"andword": andword, "zero": zero, "one": one}
         num_is_number = isinstance(num, Number)
         num = str(num)
-        if num.lower() in {"inf", "nan", "infinity", "-inf", "-infinity"}:
-            raise BadNumValueError("Non-finite number provided")
         if num_is_number and "e" in num.lower():
             num = format(Decimal(num), "f")
 
